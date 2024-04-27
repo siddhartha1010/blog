@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blog</title>
+  </head>
+  <body>
+    <div>
+      <h1 class="text-3xl font-bold mx-3 mb-4">BLOG ARTICLE</h1>
+
+      <a href="/articles/new" class="no-underline mx-3">
+        <button
+          class="overflow-hidden relative w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group"
+        >
+          New Article
+          <span
+            class="absolute w-36 h-32 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left"
+          ></span>
+          <span
+            class="absolute w-36 h-32 -top-8 -left-2 bg-emerald-500 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"
+          ></span>
+          <span
+            class="absolute w-36 h-32 -top-8 -left-2 bg-emerald-500 rotate-12 transform scale-x-0 group-hover:scale-x-50 transition-transform group-hover:duration-1000 duration-500 origin-left"
+          ></span>
+          <span
+            class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10"
+            >Create</span
+          >
+        </button>
+      </a>
+
+      <% articles.forEach(article =>{%>
+
+      <div
+        class="w-full mx-3 my-3 mt-3 rounded-lg border border-stone bg-stone-100 p-4 shadow-lg sm:p-6 lg:p-8"
+      >
+        <div class="flex items-center gap-4">
+          <span class="shrink-0 rounded-full bg-emerald-400 p-2 text-white">
+          </span>
+
+          <p class="font-medium sm:text-lg text-emerald-600">
+            <%=article.title %>
+          </p>
+        </div>
+
+        <p class="text-gray-400 mx-4">
+          <%=article.createdAt.toLocaleDateString() %>
+        </p>
+
+        <p class="mt-4 text-gray-600"><%=article.description %></p>
+
+        <div class="mt-6 sm:flex sm:gap-4">
+          <a
+            href="#"
+            class="inline-block w-full rounded-lg bg-emerald-500 px-5 py-3 text-center text-sm font-semibold text-white sm:w-auto"
+          >
+            View
+          </a>
+
+          <a
+            href="#"
+            class="mt-2 inline-block w-full rounded-lg bg-stone-300 px-5 py-3 text-center text-sm font-semibold text-gray-800 sm:mt-0 sm:w-auto"
+          >
+            Dismiss
+          </a>
+        </div>
+      </div>
+      <%})%>
+    </div>
+  </body>
+</html>
