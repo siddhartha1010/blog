@@ -32,39 +32,40 @@
       </a>
 
       <% articles.forEach(article =>{%>
+      <div class="mr-10">
+        <div
+          class="w-full ms-4 my-3 mt-3 rounded-lg border border-stone bg-stone-100 p-4 shadow-lg sm:p-6 lg:p-8"
+        >
+          <div class="flex items-center gap-4">
+            <span class="shrink-0 rounded-full bg-emerald-400 p-2 text-white">
+            </span>
 
-      <div
-        class="w-full mx-3 my-3 mt-3 rounded-lg border border-stone bg-stone-100 p-4 shadow-lg sm:p-6 lg:p-8"
-      >
-        <div class="flex items-center gap-4">
-          <span class="shrink-0 rounded-full bg-emerald-400 p-2 text-white">
-          </span>
+            <p class="font-medium sm:text-lg text-emerald-600">
+              <%=article.title %>
+            </p>
+          </div>
 
-          <p class="font-medium sm:text-lg text-emerald-600">
-            <%=article.title %>
+          <p class="text-gray-400 mx-4">
+            <%=article.createdAt.toLocaleDateString() %>
           </p>
-        </div>
 
-        <p class="text-gray-400 mx-4">
-          <%=article.createdAt.toLocaleDateString() %>
-        </p>
+          <p class="mt-4 text-gray-600"><%=article.description %></p>
 
-        <p class="mt-4 text-gray-600"><%=article.description %></p>
+          <div class="mt-6 sm:flex sm:gap-4">
+            <a
+              href="#"
+              class="inline-block w-full rounded-lg bg-emerald-500 px-5 py-3 text-center text-sm font-semibold text-white sm:w-auto"
+            >
+              View
+            </a>
 
-        <div class="mt-6 sm:flex sm:gap-4">
-          <a
-            href="#"
-            class="inline-block w-full rounded-lg bg-emerald-500 px-5 py-3 text-center text-sm font-semibold text-white sm:w-auto"
-          >
-            View
-          </a>
-
-          <a
-            href="#"
-            class="mt-2 inline-block w-full rounded-lg bg-stone-300 px-5 py-3 text-center text-sm font-semibold text-gray-800 sm:mt-0 sm:w-auto"
-          >
-            Dismiss
-          </a>
+            <a
+              href="#"
+              class="mt-2 inline-block w-full rounded-lg bg-stone-300 px-5 py-3 text-center text-sm font-semibold text-gray-800 sm:mt-0 sm:w-auto"
+            >
+              Dismiss
+            </a>
+          </div>
         </div>
       </div>
       <%})%>

@@ -1,9 +1,15 @@
 // const express = require("express");
+import dotenv from "dotenv";
 import express from "express";
+import mongoose from "mongoose";
 import articleRouter from "./routes/article.js";
 // const articleRouter = require("./routes/article");
+dotenv.config({ path: "./config.env" });
 const app = express();
 const port = 3000;
+const DB = `${process.env.MONGODB_URI}`;
+
+mongoose.connect(DB, {}).then(() => console.log("DB connection succesful!"));
 
 app.set("view engine", "ejs"); //When you set the view engine using app.set("view engine", "ejs"), Express knows to use EJS for rendering views.
 
