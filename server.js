@@ -7,6 +7,8 @@ import articleRouter from "./routes/article.js";
 dotenv.config({ path: "./config.env" });
 const app = express();
 const port = 3000;
+app.use(express.json());
+
 const DB = `${process.env.MONGODB_URI}`;
 
 mongoose.connect(DB, {}).then(() => console.log("DB connection succesful!"));
