@@ -1,0 +1,27 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  script(src='https://cdn.tailwindcss.com')
+  title Blog
+div
+  h1.text-3xl.font-bold.mx-3.mb-4 BLOG ARTICLES
+  a.no-underline.mx-3(href='/new')
+    button#new.overflow-hidden.relative.w-32.p-2.h-12.bg-black.text-white.border-none.rounded-md.text-xl.font-bold.cursor-pointer.relative.z-10.group
+      | New Article
+      span.absolute.w-36.h-32.-top-8.-left-2.bg-white.rotate-12.transform.scale-x-0.transition-transform.duration-1000.origin-left(class='group-hover:scale-x-100 group-hover:duration-500')
+      span.absolute.w-36.h-32.-top-8.-left-2.bg-emerald-500.rotate-12.transform.scale-x-0.transition-transform.duration-700.origin-left(class='group-hover:scale-x-100 group-hover:duration-700')
+      span.absolute.w-36.h-32.-top-8.-left-2.bg-emerald-500.rotate-12.transform.scale-x-0.transition-transform.duration-500.origin-left(class='group-hover:scale-x-50 group-hover:duration-1000')
+      span.duration-100.opacity-0.absolute.left-6.z-10(class='group-hover:opacity-100 group-hover:duration-1000 top-2.5') Create
+  each article in articles
+    .mr-10
+      .w-full.ms-4.my-3.mt-3.rounded-lg.border.border-stone.bg-stone-100.p-4.shadow-lg(class='sm:p-6 lg:p-8')
+        .flex.items-center.gap-4
+          span.shrink-0.rounded-full.bg-emerald-400.p-2.text-white
+          p.font-medium.text-emerald-600(class='sm:text-lg')=article.title
+        p.text-gray-400.mx-4=article.createdAt.toLocaleDateString()
+        p.mt-4.text-gray-600=article.description
+        .mt-6(class='sm:flex sm:gap-4')
+          a.inline-block.w-full.rounded-lg.bg-emerald-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(href='#' class='sm:w-auto') View
+          a.mt-2.inline-block.w-full.rounded-lg.bg-stone-300.px-5.py-3.text-center.text-sm.font-semibold.text-gray-800(href='#' class='sm:mt-0 sm:w-auto') Dismiss
+  script(src='./../public/js/main.js')

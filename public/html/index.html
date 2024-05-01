@@ -12,6 +12,7 @@
 
       <a href="/articles/new" class="no-underline mx-3">
         <button
+          id="new"
           class="overflow-hidden relative w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group"
         >
           New Article
@@ -31,7 +32,7 @@
         </button>
       </a>
 
-      <% articles.forEach(article =>{%>
+      <!-- <% articles.forEach(article =>{%> -->
       <div class="mr-10">
         <div
           class="w-full ms-4 my-3 mt-3 rounded-lg border border-stone bg-stone-100 p-4 shadow-lg sm:p-6 lg:p-8"
@@ -41,15 +42,16 @@
             </span>
 
             <p class="font-medium sm:text-lg text-emerald-600">
-              <%=article.title %>
+              <!-- <%=article.title %> -->
             </p>
           </div>
 
           <p class="text-gray-400 mx-4">
-            <%=article.createdAt.toLocaleDateString() %>
+            <!-- <%=article.createdAt.toLocaleDateString() %> -->
           </p>
 
-          <p class="mt-4 text-gray-600"><%=article.description %></p>
+          <p class="mt-4 text-gray-600"></p>
+          <!-- <%=article.description %> -->
 
           <div class="mt-6 sm:flex sm:gap-4">
             <a
@@ -68,7 +70,7 @@
           </div>
         </div>
       </div>
-      <%})%>
+      <!-- <%})%> -->
     </div>
   </body>
 </html>
