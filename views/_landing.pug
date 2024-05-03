@@ -16,7 +16,7 @@ div
         p.text-gray-400.mx-4=article.createdAt.toLocaleDateString()
         p.mt-4.text-gray-600=article.description
         .mt-6(class='sm:flex sm:gap-4')
-          button#view.inline-block.w-full.rounded-lg.bg-emerald-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(class='sm:w-auto') View
+          a#view.inline-block.w-full.rounded-lg.bg-emerald-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(href=`/article/${article.slug}` class='sm:w-auto') View
           button#edit.inline-block.w-full.rounded-lg.bg-emerald-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(class='sm:w-auto') Edit
           button#delete.inline-block.w-full.rounded-lg.bg-emerald-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(class='sm:w-auto') Delete
 

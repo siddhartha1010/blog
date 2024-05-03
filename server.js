@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import path from "path";
+import cookieParser from "cookie-parser";
 import articleRouter from "./routes/article.js";
 // const articleRouter = require("./routes/article");
 dotenv.config({ path: "./config.env" });
@@ -26,7 +27,7 @@ app.set("views", path.join(__dirname, "views"));
 
 // app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static("./public"));
-
+app.use(cookieParser());
 app.use("/", articleRouter);
 
 app.listen(port, () => {

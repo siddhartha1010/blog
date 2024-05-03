@@ -11,4 +11,12 @@ const getNewArticle = async (req, res) => {
   res.status(200).render("new");
 };
 
-export { getArticle, getNewArticle };
+const getOneArticle = async (req, res) => {
+  const article = await Article.findOne({ slug: req.params.slug });
+
+  res.status(200).render("view", {
+    article,
+  });
+};
+
+export { getArticle, getNewArticle, getOneArticle };
