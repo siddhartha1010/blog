@@ -3,6 +3,7 @@ import mongoose, { Mongoose } from "mongoose";
 const articleSchema = new mongoose.Schema({
   title: {
     type: String,
+    // required: [true, "An article must have a name"],
     required: true,
   },
   description: {

@@ -14,7 +14,12 @@ app.use(express.json());
 
 const DB = `${process.env.MONGODB_URI}`;
 
-mongoose.connect(DB, {}).then(() => console.log("DB connection succesful!"));
+mongoose
+  .connect(DB, {})
+  .then(() => console.log("DB connection succesful!"))
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.set("view engine", "pug"); //When you set the view engine using app.set("view engine", "ejs"), Express knows to use EJS for rendering views.
 app.set("views", path.join(__dirname, "views"));

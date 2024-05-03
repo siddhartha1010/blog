@@ -1,12 +1,8 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  script(src='https://cdn.tailwindcss.com')
-  title Blog
-div
-  h1.text-3xl.font-bold.mx-3.mb-4 NEW ARTICLE
-  include _form_field
-    
-  script(src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js')        
-  script(type='module' src='./js/main.js')
+extends index
+
+block content
+  div
+    h1.text-3xl.font-bold.mx-3.mb-4 NEW ARTICLE
+    include _form_field
+
+  
