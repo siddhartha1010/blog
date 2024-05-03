@@ -19,4 +19,11 @@ const getOneArticle = async (req, res) => {
   });
 };
 
-export { getArticle, getNewArticle, getOneArticle };
+const editArticle = async (req, res) => {
+  const article = await Article.findOne({ slug: req.params.slug });
+
+  res.status(200).render("edit", {
+    article,
+  });
+};
+export { getArticle, getNewArticle, getOneArticle, editArticle };

@@ -11,6 +11,7 @@ import {
   getArticle,
   getNewArticle,
   getOneArticle,
+  editArticle,
 } from "../controllers/viewController.js";
 const router = express.Router();
 
@@ -20,8 +21,9 @@ router.get("/", getArticle);
 router.get("/new", getNewArticle);
 router.get("/article/:slug", getOneArticle);
 // router.route("/:id").get(getoneArticle);
-router.route("/:id").patch(updateArticle);
-router.route("/:id").delete(deleteArticle);
+router.route("/:slug").patch(updateArticle);
+router.route("/article/:slug").delete(deleteArticle);
+router.route("/edit/:slug").get(editArticle);
 
 export default router;
 

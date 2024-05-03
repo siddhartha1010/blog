@@ -58,7 +58,7 @@ const updateArticle = async (req, res) => {
 
 const deleteArticle = async (req, res) => {
   try {
-    await Article.findByIdAndDelete(req.params.id);
+    await Article.findOneAndDelete({ slug: req.params.slug });
 
     res.status(200).json({
       status: "success",

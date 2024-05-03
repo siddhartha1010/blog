@@ -1,6 +1,34 @@
 extends index
 
 block content
-  div
-    h1=article.title
+  div.mr-10
+    .w-full.bg-white.rounded-b-lg.border-t-8.border-green-400.px-4.py-5.mx-4.mt-4.flex.flex-col.justify-around.shadow-md
+      p.text-lg.font-bold.font-sans=article.title
+      .py-3
+        p.text-gray-400.font-bold.text-sm=article.description
+      
+        p.text-lg.font-bold.font-sans.text-center.mt-4 Find More
+       
+        each link in article.markdown.split(/\s+/)
+          div(style="display: flex; justify-content: center;")
+            button(class="cursor-pointer duration-200 hover:scale-125 active:scale-100" title="Attach" style="width: 50px; height: 50px;")
+              svg(class="stroke-green-300 fill-none" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 -0.5 25 25")
+                path(stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M15.17 11.053L11.18 15.315C10.8416 15.6932 10.3599 15.9119 9.85236 15.9178C9.34487 15.9237 8.85821 15.7162 8.51104 15.346C7.74412 14.5454 7.757 13.2788 8.54004 12.494L13.899 6.763C14.4902 6.10491 15.3315 5.72677 16.2161 5.72163C17.1006 5.71649 17.9463 6.08482 18.545 6.736C19.8222 8.14736 19.8131 10.2995 18.524 11.7L12.842 17.771C12.0334 18.5827 10.9265 19.0261 9.78113 18.9971C8.63575 18.9682 7.55268 18.4695 6.78604 17.618C5.0337 15.6414 5.07705 12.6549 6.88604 10.73L12.253 5")
+            a(href=link class="underline")=link
+  //- button.delete.mt-5.mx-7.inline-block.w-full.rounded-lg.bg-red-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(class='sm:w-auto' data-id=article._id) Delete
+  //- button.delete.mt-5.inline-block.w-full.rounded-lg.bg-red-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(class='sm:w-auto' style="margin-right: 7rem;" data-id=article._id) Delete
+  //- button.delete.mt-5.inline-block.rounded-lg.bg-red-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(class='sm:w-auto' style="margin-left: auto;" data-id=article._id) Delete
+  div(style="display: flex; justify-content: flex-end;")
+    button.delete.mt-5.mx-5.inline-block.rounded-lg.bg-red-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(class='sm:w-auto' data-id=article._id) Delete
+
+
+
+
+      
+    
+
+
+
+
+  
     

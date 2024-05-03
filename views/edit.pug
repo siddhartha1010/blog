@@ -1,0 +1,20 @@
+extends index
+
+block content
+  div
+    h1.text-3xl.font-bold.mx-3.mb-4 EDIT ARTICLE
+    .form-group.mr-10.mb-5
+        label.mx-3.text-sm.text-black-400.font-medium.leading-none(class='peer-disabled:cursor-not-allowed peer-disabled:opacity-70') Title
+        input.edittitle.mx-3.px-3.flex.h-10.w-full.rounded-md.border.border-input.bg-background.text-sm.ring-offset-background(required="required" type='text' name='title' placeholder='Enter the title' class='file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' value=article.title)
+    .form-group.mr-10.mb-5
+        label.mx-3.text-sm.text-black-400.font-medium.leading-none(class='peer-disabled:cursor-not-allowed peer-disabled:opacity-70') Description
+        textarea.editdescription.mx-3.px-3.h-40.flex.w-full.rounded-md.border.border-input.bg-background(name='description' placeholder='Enter description')= article.description
+    .form-group.mr-10.mb-5
+        label.mx-3.text-sm.text-black-400.font-medium.leading-none(class='peer-disabled:cursor-not-allowed peer-disabled:opacity-70') Markdown
+        textarea.editmarkdown.mx-3.px-3.h-40.flex.w-full.rounded-md.border.border-input.bg-background(name='link' placeholder='Enter markdown')= article.markdown
+
+    button.edit.mx-4.my-4.relative.py-2.px-8.text-black.text-base.font-bold.nded-full.overflow-hidden.bg-white.rounded-full.transition-all.duration-400.ease-in-out.shadow-md(type='submit' class='hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-green-800 before:to-blue-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0')
+        | Save    
+
+
+  
