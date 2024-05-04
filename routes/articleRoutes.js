@@ -5,7 +5,7 @@ import {
   // getoneArticle,
   deleteArticle,
   // getArticle,
-} from "./../controllers/articleController.js";
+} from "../controllers/articleController.js";
 
 import {
   getArticle,

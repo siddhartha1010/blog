@@ -4,7 +4,8 @@ import { createArticle, deleteArticle, editArticle } from "./function.js";
 // const editBtn = document.querySelector("#edit");
 const deleteBtn = document.querySelector(".delete");
 const saveBtn = document.querySelector(".save");
-const EditBtn = document.querySelector(".edit");
+// const EditBtn = document.querySelector(".edit");
+const editarticle = document.querySelector(".editarticle");
 
 // if (viewBtn) {
 //   viewBtn.addEventListener("click", (e) => {
@@ -39,13 +40,15 @@ if (saveBtn) {
   });
 }
 
-if (EditBtn) {
-  EditBtn.addEventListener("click", (e) => {
+if (editarticle) {
+  editarticle.addEventListener("click", (e) => {
+    console.log("clicked");
     e.preventDefault();
-    const edittitle = document.querySelector(".edittitle").value;
-    const editdescription = document.querySelector(".editdescription").value;
-    const editmarkdown = document.querySelector(".editmarkdown").value;
-    editArticle(edittitle, editdescription, editmarkdown);
+    const title = document.querySelector(".title").value;
+    const description = document.querySelector(".description").value;
+    const markdown = document.querySelector(".markdown").value;
+    editArticle(title, description, markdown);
+    console.log(title, description, markdown);
 
     // console.log("save");
   });

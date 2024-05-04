@@ -4,7 +4,7 @@ import express from "express";
 import mongoose from "mongoose";
 import path from "path";
 import cookieParser from "cookie-parser";
-import articleRouter from "./routes/article.js";
+import articleRouter from "./routes/articleRoutes.js";
 // const articleRouter = require("./routes/article");
 dotenv.config({ path: "./config.env" });
 const app = express();

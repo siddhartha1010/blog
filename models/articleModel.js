@@ -24,7 +24,7 @@ const articleSchema = new mongoose.Schema({
 //slug banauni ya bata basically yauta string ho jun hami url ma halna skxum based on name
 
 articleSchema.pre("save", function (next) {
-  console.log(this);
+  // console.log(this);
   // console.log((this.title = "hello"));//jun document point vai rako tellai point garxa
   this.slug = slugify(this.title, { lower: true });
   next();

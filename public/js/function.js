@@ -14,7 +14,7 @@ const createArticle = async (title, description, markdown) => {
     });
     console.log(res);
     if (res.data.status === "success") {
-      showAlert("success", "Logged in successfully!");
+      showAlert("success", "Article created successfully");
       window.setTimeout(() => {
         location.assign("/");
       }, 1500);
@@ -26,28 +26,34 @@ const createArticle = async (title, description, markdown) => {
   }
 };
 
-const editArticle = async (edittitle, editdescription, editmarkdown) => {
+const editArticle = async (title, description, markdown) => {
   try {
+    // Extract slug from the URL
+    const urlParts = window.location.pathname.split("/");
+    const slug = urlParts[urlParts.length - 1];
+
     const res = await axios({
       method: "PATCH",
-      url: "http://127.0.0.1:4000/:slug",
+      url: `http://127.0.0.1:4000/${slug}`, // Adjust the URL accordingly
       data: {
-        edittitle,
-        editdescription,
-        editmarkdown,
+        title,
+        description,
+        markdown,
       },
     });
-    console.log(res);
-    if (res.data.status === "success") {
-      showAlert("success", "Logged in successfully!");
+
+    console.log(res); // Log the entire response object for debugging
+
+    if (res && res.data && res.data.status === "success") {
+      showAlert("success", "Edited successfully");
       window.setTimeout(() => {
         location.assign("/");
       }, 1500);
+    } else {
+      showAlert("error", "Failed to edit article");
     }
-    //console.log(res);
   } catch (err) {
-    showAlert("error", err.response.data.message);
-    // showAlert("error", "an article must have a title");
+    showAlert("error", err.message); // Display error message if request fails
   }
 };
 
@@ -81,7 +87,7 @@ const deleteArticle = async () => {
     // console.log(res);
     // if (res.data.status === "success") {
     // showAlert("success", "Deleted Succesfully");
-    showAlert("error", "ONLy by admin");
+    showAlert("error", "You are not an admin");
 
     // window.setTimeout(() => {
     //   location.assign("/");

@@ -37,10 +37,14 @@ const getoneArticle = async (req, res) => {
 
 const updateArticle = async (req, res) => {
   try {
-    const article = await Article.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
+    const article = await Article.findOneAndUpdate(
+      { slug: req.params.slug },
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
     // console.log(req.params);
     res.status(200).json({
       status: "success",
