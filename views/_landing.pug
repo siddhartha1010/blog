@@ -12,7 +12,7 @@ div
       .w-full.ms-4.my-3.mt-3.rounded-lg.border.border-stone.bg-stone-100.p-4.shadow-lg(class='sm:p-6 lg:p-8')
         .flex.items-center.gap-4
           span.shrink-0.rounded-full.bg-emerald-400.p-2.text-white
-          p.font-medium.text-emerald-600(class='sm:text-lg')=article.title
+          p.font-medium.text-emerald-600(class='sm:text-lg')=article.title.toUpperCase()
         p.text-gray-400.mx-4=article.createdAt.toLocaleDateString()
         //- p.mt-4.text-gray-600=article.description
         p.mt-4.text-gray-600

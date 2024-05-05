@@ -1,4 +1,5 @@
 import { Article } from "./../models/articleModel.js";
+import { catchasync } from "../utils/catchAsync.js";
 
 const createArticle = async (req, res) => {
   try {
@@ -16,6 +17,16 @@ const createArticle = async (req, res) => {
     });
   }
 };
+// const createArticle = catchasync(async (req, res, next) => {
+//   const newArticle = await Article.create(req.body);
+
+//   res.status(200).json({
+//     status: "success",
+//     data: {
+//       article: newArticle,
+//     },
+//   });
+// });
 
 const getoneArticle = async (req, res) => {
   try {

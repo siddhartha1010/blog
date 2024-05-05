@@ -4,7 +4,7 @@ block content
   div.mr-10
     .w-full.bg-white.rounded-b-lg.border-t-8.border-green-400.px-4.py-5.mx-4.mt-4.flex.flex-col.justify-around.shadow-md
       p.text-lg.font-bold.font-sans=article.title.toUpperCase()
-      p.text-lg.font-bold.font-sans=article.name
+      //- p.text-lg.font-bold.font-sans=article.name
 
 
       .py-3
@@ -23,6 +23,28 @@ block content
   //- button.delete.mt-5.inline-block.rounded-lg.bg-red-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(class='sm:w-auto' style="margin-left: auto;" data-id=article._id) Delete
   div(style="display: flex; justify-content: flex-end;")
     button.delete.mt-5.mx-5.inline-block.rounded-lg.bg-red-500.px-5.py-3.text-center.text-sm.font-semibold.text-white(class='sm:w-auto' data-id=article._id) Delete
+  div.flex.justify-center.items-center
+    .card.mt-10.mx-20
+      .relative.bg.blue.group.transition-all.duration-700.aspect-video.flex.items-center.justify-center(class='w-[300px] sm:w-[350px]')
+        .transition-all.flex.flex-col.items-center.py-5.justify-start.duration-300.bg-white.w-full.h-full.absolute(class='group-hover:duration-1000 group-hover:-translate-y-16')
+          p.px-10.text-gray-700(class='text-[10px] sm:text-[12px]')
+            | Written By:
+          p.text-xl.font-semibold.text-gray-500.font-serif(class='sm:text-2xl')
+            |#{article.name}
+          p.px-10.text-gray-700(class='text-[10px] sm:text-[12px]')
+            | Feel free to drop any suggestions at 
+          a(href='https://www.siddhartharaut.com.np/', class='p font-sans text-gray-700 pt-5 text-[10px] underline') www.siddhartharaut.com.np
+  
+       
+        button.seal.bg-rose-500.text-red-800.w-10.aspect-square.rounded-full.z-40.flex.items-center.justify-center.font-semibold.transition-all.duration-1000.border-4.border-rose-900(class='text-[10px] [clip-path:polygon(50%_0%,_80%_10%,_100%_35%,_100%_70%,_80%_90%,_50%_100%,_20%_90%,_0%_70%,_0%_35%,_20%_10%)] group-hover:opacity-0 group-hover:scale-0 group-hover:rotate-180')
+          | Hello
+        .tp.transition-all.duration-1000.bg-neutral-800.absolute.w-full.h-full(class='group-hover:duration-100 group-hover:[clip-path:polygon(50%_0%,_100%_0,_0_0)] [clip-path:polygon(50%_50%,_100%_0,_0_0)]')
+        .lft.transition-all.duration-700.absolute.w-full.h-full.bg-neutral-900(class='[clip-path:polygon(50%_50%,_0_0,_0_100%)]')
+        .rgt.transition-all.duration-700.absolute.w-full.h-full.bg-neutral-800(class='[clip-path:polygon(50%_50%,_100%_0,_100%_100%)]')
+        .btm.transition-all.duration-700.absolute.w-full.h-full.bg-neutral-900(class='[clip-path:polygon(50%_50%,_100%_100%,_0_100%)]')
+
+
+    
 
 
 

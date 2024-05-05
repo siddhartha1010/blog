@@ -22,7 +22,7 @@ const createArticle = async (name, title, description, markdown) => {
     }
     //console.log(res);
   } catch (err) {
-    showAlert("error", err.response.data.message);
+    showAlert("error", "Title can't be empty ");
     // showAlert("error", "an article must have a title");
   }
 };
