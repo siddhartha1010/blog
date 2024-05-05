@@ -5,10 +5,9 @@ import xss from "xss-clean";
 import hpp from "hpp";
 import mongoSanitize from "express-mongo-sanitize";
 import compression from "compression";
+import cors from "cors";
 
-import { globalErrorHandler } from "./controllers/errorcontroller.js";
 import articleRouter from "./routes/articleRoutes.js";
-import AppError from "./utils/appError.js";
 const app = express();
 const __dirname = path.resolve();
 
@@ -23,15 +22,10 @@ app.use(xss());
 app.use(hpp());
 app.use(mongoSanitize());
 app.use(compression());
+app.use(cors());
 
 console.log(process.env.NODE_ENV);
 
 app.use("/", articleRouter);
-
-app.all("*", (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-});
-
-app.use(globalErrorHandler);
 
 export { app };

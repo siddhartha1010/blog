@@ -1,5 +1,4 @@
 import { Article } from "./../models/articleModel.js";
-import { catchasync } from "../utils/catchAsync.js";
 
 const createArticle = async (req, res) => {
   try {
