@@ -5,7 +5,7 @@ const createArticle = async (name, title, description, markdown) => {
   try {
     const res = await axios({
       method: "POST",
-      url: "http://127.0.0.1:4000/create",
+      url: "/create",
       data: {
         name,
         title,
@@ -35,7 +35,7 @@ const editArticle = async (title, description, markdown) => {
 
     const res = await axios({
       method: "PATCH",
-      url: `http://127.0.0.1:4000/${slug}`, // Adjust the URL accordingly
+      url: `/${slug}`, // Adjust the URL accordingly
       data: {
         title,
         description,
