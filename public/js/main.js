@@ -31,10 +31,11 @@ if (deleteBtn) {
 if (saveBtn) {
   saveBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    const name = document.querySelector(".name").value;
     const title = document.querySelector(".title").value;
     const description = document.querySelector(".description").value;
     const markdown = document.querySelector(".markdown").value;
-    createArticle(title, description, markdown);
+    createArticle(name, title, description, markdown);
 
     console.log("save");
   });

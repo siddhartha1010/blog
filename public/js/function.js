@@ -1,12 +1,13 @@
 import { showAlert } from "./alert.js";
 // import { axios } from "axios";
 
-const createArticle = async (title, description, markdown) => {
+const createArticle = async (name, title, description, markdown) => {
   try {
     const res = await axios({
       method: "POST",
       url: "http://127.0.0.1:4000/create",
       data: {
+        name,
         title,
         description,
         markdown,

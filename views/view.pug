@@ -3,7 +3,10 @@ extends index
 block content
   div.mr-10
     .w-full.bg-white.rounded-b-lg.border-t-8.border-green-400.px-4.py-5.mx-4.mt-4.flex.flex-col.justify-around.shadow-md
-      p.text-lg.font-bold.font-sans=article.title
+      p.text-lg.font-bold.font-sans=article.title.toUpperCase()
+      p.text-lg.font-bold.font-sans=article.name
+
+
       .py-3
         p.text-gray-400.font-bold.text-sm=article.description
       

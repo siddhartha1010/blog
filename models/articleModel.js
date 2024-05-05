@@ -2,6 +2,9 @@ import mongoose, { Mongoose } from "mongoose";
 import slugify from "slugify";
 
 const articleSchema = new mongoose.Schema({
+  name: {
+    type: String,
+  },
   title: {
     type: String,
     required: [true, "An article must have a name"],
